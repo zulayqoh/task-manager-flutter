@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'gradient_button.dart';
 
 class TaskCard extends StatelessWidget {
   const TaskCard({
@@ -8,41 +9,40 @@ class TaskCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
-      color: Colors.white54,
-      margin: EdgeInsets.all(15.0),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        children: [
-          ElevatedButton(
-            onPressed: () {},
-            child: Text('HII'),
-          ),
-          SizedBox(width: 20.0),
-          Expanded(
-            child: Padding(
-              padding: const EdgeInsets.all(8.0),
+      margin: EdgeInsets.fromLTRB(15.0, 10.0, 15.0, 5),
+      child: Padding(
+        padding: const EdgeInsets.all(16.0),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.start,
+          children: [
+            GradientButton(
+                color1: Colors.purple,
+                color2: Colors.red,
+                icon: Icons.check,
+              size: 5.0,
+            ),
+            Expanded(
               child: Text(
-                'This data is our Todo,This data is o TodoThis data is our Todo',
-                textAlign: TextAlign.center,
+                'This data is our Todo,This data is o Todo',
+                textAlign: TextAlign.start,
               ),
             ),
-          ),
-          SizedBox(width: 20.0),
-          Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              Text(
-                '27 Jun',
-                style: TextStyle(
-                  fontWeight: FontWeight.bold,
+            Column(
+              //mainAxisAlignment: MainAxisAlignment.center,
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                Text(
+                  '27 Jun',
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                  ),
                 ),
-              ),
-              SizedBox(height: 3.0),
-              Text('20:12')
-            ],
-          ),
-        ],
+                SizedBox(height: 3),
+                Text('20:12')
+              ],
+            ),
+          ],
+        ),
       ),
     );
   }
