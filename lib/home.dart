@@ -92,11 +92,9 @@ class Home extends StatelessWidget {
                 ),
               ),
             ),
-
           ],
         ),
       ),
-
       body: Row(
         children: [
           TaskCard()
