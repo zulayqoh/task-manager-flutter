@@ -9,6 +9,7 @@ class Home extends StatelessWidget {
   }) : super(key: key);
 
   List<Widget> todos = [];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -34,11 +35,17 @@ class Home extends StatelessWidget {
               title: Text('Icon'),
               subtitle: Row(
                 children: const [
-                  GradientButton(color1: Colors.orange, color2: Colors.red, icon: Icons.ac_unit_outlined,),
+                  GradientButton(color1: Colors.orange,
+                    color2: Colors.red,
+                    icon: Icons.ac_unit_outlined,),
 
-                  GradientButton(color1: Colors.pink, color2: Colors.purple, icon: Icons.ac_unit_outlined,),
+                  GradientButton(color1: Colors.pink,
+                    color2: Colors.purple,
+                    icon: Icons.ac_unit_outlined,),
 
-                  GradientButton(color1: Colors.blue, color2: Colors.yellow, icon: Icons.ac_unit_outlined,),
+                  GradientButton(color1: Colors.blue,
+                    color2: Colors.yellow,
+                    icon: Icons.ac_unit_outlined,),
 
                 ],
               ),
@@ -54,13 +61,13 @@ class Home extends StatelessWidget {
             ListTile(
               title: Text('Description'),
               subtitle: TextFormField(
-                  maxLines: 5,
-                  decoration: InputDecoration(fillColor: Colors.white,
-                      hintText: 'Enter your description',
-                      border: OutlineInputBorder(
-                          borderRadius: BorderRadius.all(Radius.circular(10.0))
-                      )
-                  ),
+                maxLines: 5,
+                decoration: InputDecoration(fillColor: Colors.white,
+                    hintText: 'Enter your description',
+                    border: OutlineInputBorder(
+                        borderRadius: BorderRadius.all(Radius.circular(10.0))
+                    )
+                ),
               ),
             ),
 
@@ -86,18 +93,56 @@ class Home extends StatelessWidget {
                 child: LongButton(
                   text: 'Add',
                   onPressed: () {
-
                     Navigator.of(context).pop();
                   },
                 ),
               ),
             ),
+
           ],
         ),
       ),
-      body: Row(
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.end,
         children: [
-          TaskCard()
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            crossAxisAlignment: CrossAxisAlignment.end,
+            children: [
+              GradientButton(
+                color1: Colors.pinkAccent,
+                color2: Colors.purple,
+                icon: Icons.check,
+                size: 15.0,
+              ),
+
+              ElevatedButton(
+                onPressed: () {},
+                child: Icon(
+                  Icons.calendar_today_outlined,
+                  color: Colors.orange[900],
+                  size: 30,
+                ),
+                style: ElevatedButton.styleFrom(
+                  shape: CircleBorder(),
+                  padding: EdgeInsets.all(20.0),
+                  primary: Colors.white,
+                ),
+              ),
+
+              GradientButton(
+                color1: Color(0xFF0D7AEA),
+                color2: Color(0xFF00D5F9),
+                icon: Icons.add,
+                size: 15.0,
+                action: () {
+
+                },
+              ),
+
+            ],
+          ),
+          SizedBox(height: 40.0,)
         ],
       ),
     );

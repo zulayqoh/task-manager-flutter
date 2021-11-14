@@ -8,40 +8,42 @@ class TaskCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Card(
+    return Container(
       margin: EdgeInsets.fromLTRB(15.0, 10.0, 15.0, 5),
-      child: Padding(
-        padding: const EdgeInsets.all(16.0),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.start,
-          children: [
-            GradientButton(
-                color1: Colors.purple,
-                color2: Colors.red,
-                icon: Icons.check,
-              size: 5.0,
-            ),
-            Expanded(
-              child: Text(
-                'This data is our Todo,This data is o Todo',
-                textAlign: TextAlign.start,
+      child: Card(
+        child: Padding(
+          padding: const EdgeInsets.all(16.0),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: [
+              GradientButton(
+                  color1: Colors.purple,
+                  color2: Colors.red,
+                  icon: Icons.check,
+                size: 5.0,
               ),
-            ),
-            Column(
-              //mainAxisAlignment: MainAxisAlignment.center,
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                Text(
-                  '27 Jun',
-                  style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                  ),
+              Expanded(
+                child: Text(
+                  'This data is our Todo,This data is o Todo',
+                  textAlign: TextAlign.start,
                 ),
-                SizedBox(height: 3),
-                Text('20:12')
-              ],
-            ),
-          ],
+              ),
+              Column(
+                //mainAxisAlignment: MainAxisAlignment.center,
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  Text(
+                    '27 Jun',
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                  SizedBox(height: 3),
+                  Text('20:12')
+                ],
+              ),
+            ],
+          ),
         ),
       ),
     );
